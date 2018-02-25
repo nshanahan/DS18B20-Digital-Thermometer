@@ -1,35 +1,39 @@
 /***************************************************************
- * Nicholas Shanahan (2016)
+ * @file owi_crc.h
+ * 
+ * @par Nicholas Shanahan (2016)
  *
- * DESCRIPTION:
- *  - Utility to compute the 8bit cyclic redundancy check (CRC8)
- *    of a byte of data. Intended to be used to compute the CRC8
- *    of a large byte array.
+ * @brief Utility to compute the 8-bit cyclic redundancy check (CRC8)
+ * of a byte of data. Intended to be used to compute the CRC8
+ * of a large byte array.
  *
  **************************************************************/
-#ifndef OWI_CRC_H_
-#define OWI_CRC_H_
+
+#ifndef _OWI_CRC_H
+#define _OWI_CRC_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /**************************************************************
-			  Includes
+                            Includes
 ***************************************************************/
 #include <stdint.h>
 
 /**************************************************************
-		    Function Prototypes
+                         Public Functions
 ***************************************************************/
 
 /***************************************************************
  *
- * DESCRIPTION:
- *  - Computes a Cyclic Redundancy Check of a byte of data. 
- *    The input parameter seed may be zero or the previously
- *    computed CRC value if attempting to calculat the CRC of
- *    an array of bytes.
+ * @brief Computes a Cyclic Redundancy Check of a byte of data. 
+ * The input parameter seed may be zero or the previously
+ * computed CRC value if attempting to calculated the CRC of
+ * an array of bytes.
+ * @param[in] data Data byte to perform CRC on.
+ * @param[in] see CRC seed value.
+ * @return uint8_t
  *
  **************************************************************/
 uint8_t crc8(uint8_t data, uint8_t seed);
@@ -38,5 +42,4 @@ uint8_t crc8(uint8_t data, uint8_t seed);
 }
 #endif
 
-#endif
-/* End of owi_crc.h */
+#endif /* _OWI_CRC_H */
